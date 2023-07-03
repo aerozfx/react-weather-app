@@ -18,6 +18,7 @@ Tiene iconos e imágenes que responden al estado del tiempo que esté selecciona
   - [A mejorar](#a-mejorar)
   - [Recursos](#recursos)
 - [Autor](#autor)
+- [Desarrollo](#desarrollo)
 
 ## Vista general
 
@@ -37,7 +38,7 @@ En esta pequeña aplicación, el usuario podrá:
 ### Links
 
 - [Repositorio de GitHub](https://github.com/aerozfx/react-weather-app.git)
-- [Demo](https://your-live-site-url.com)
+- [Demo](https://thunderous-entremet-40506e.netlify.app/)
 
 ## Proceso
 
@@ -57,6 +58,36 @@ Falta añadir un `slider` para que la experiencia de usuario sea más satisfacto
 
 - [MDN: Scroll into view](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView) - Emular efecto de slider
 - [Ejemplo de slider con React](https://codesandbox.io/s/32xjhx?file=/App.js:155-176&utm_medium=sandpack) - Sandbox del efecto a emular
+
+## Desarrollo
+
+En caso de que quieras personalizar a tu manera este proyecto, puedes hacerlo de la siguiente manera
+
+Para instalar las dependencias necesarias, primero deberemos ejecutar `npm install` en nuestra terminal
+
+```console
+  npm install
+```
+
+Una vez se hayan instalado las dependencias necesarias, para ejecutar nuestro servidor en tiempo real debemos usar `npm run dev`
+
+```console
+  npm run dev
+```
+
+Para comprobar nuestra aplicación en su versión de producción podemos usar `npm run build`
+
+```console
+  npm run build
+```
+
+Si queremos ver nuestra aplicación tal y como se va a subir a producción debemos usar `npm run preview`
+
+```console
+npm run preview
+```
+
+Las imágenes o SVG que se usen, se deberán colocar en la carpeta `./public`. Ya que al preparar la aplicación para producción, usa esa ruta de manera predeterminada.
 
 ## Autor
 
