@@ -1,7 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./WeatherCard.css"
 import { formatDay, formatHour, getWeatherStatus } from "../../utils/utils"
 import {images} from "../../assets/images"
+import { svg } from "../../assets/svg";
 
 const WeatherCard = ({weatherDataDay, city, temperature}) => {
   let [index, setIndex] = useState(0)
@@ -39,15 +40,15 @@ const WeatherCard = ({weatherDataDay, city, temperature}) => {
         <p className="weather-current-temp max-temp">Max: {temperature.max}</p>
       </section>
       <section className="weather-slider">
-      <img src={"src/assets/svg/back-svgrepo-com.svg"} className="btn back" alt="" onClick={prevWeatherCard}/>
+      <img src={"./svg/back-svgrepo-com.svg"} className="btn back" alt="" onClick={prevWeatherCard}/>
         <section className="weather-info">
           <article className="weather-data-card">
-                  <img src={images[image].icon} className="weather-current-status-svg"/>
+                  <img src={svg[image].icon} className="weather-current-status-svg"/>
                   <p className="weather-current-status-temp">{weatherDataDay[index].main.temp}ºC</p>
                   <p className="weather-current-status-time">{formatHour(weatherDataDay[index].dt_txt)}</p>
           </article>
         </section>
-        <img src={"src/assets/svg/back-svgrepo-com.svg"} className="btn forward" alt="" onClick={nextWeatherCard} />
+        <img src={"./svg/back-svgrepo-com.svg"} className="btn forward" alt="" onClick={nextWeatherCard} />
         <section className="weather-data-state" ref={circleRef}>
           {
             weatherDataDay.map((_, i) =>
