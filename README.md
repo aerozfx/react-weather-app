@@ -69,7 +69,10 @@ Para instalar las dependencias necesarias, primero deberemos ejecutar `npm insta
   npm install
 ```
 
-Una vez se hayan instalado las dependencias necesarias, para ejecutar nuestro servidor en tiempo real debemos usar `npm run dev`
+Antes de continuar, en el archivo `.env.example`, hay que renombrarlo por `.env` y añadir tu `VITE_API_KEY` personal.
+Una vez hecho esto, se puede continuar con los pasos.
+
+Cuando se hayan instalado las dependencias necesarias, para ejecutar nuestro servidor en tiempo real debemos usar `npm run dev`
 
 ```console
   npm run dev

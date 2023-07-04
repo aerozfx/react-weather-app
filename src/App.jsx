@@ -5,27 +5,26 @@ import { useEffect, useState } from "react"
 function App() {
   const [city, setCity] = useState("")
   const [data, setData] = useState("")
-
   useEffect(() => {
     if(city === ""){
       if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(async pos => {
           let {latitude: lat, longitude:lon} = pos.coords
-          let res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=90e13aa3cc978d06e4192761c1447ebf&units=metric`)
+          let res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${import.meta.env.VITE_API_KEY}&units=metric`)
           let response = await res.json()
           setData(response)
         })
       }
     } else{
       const getCoords = async (city) => {
-        let res = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=90e13aa3cc978d06e4192761c1447ebf`)
+        let res = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${import.meta.env.VITE_API_KEY}`)
         let response = await res.json()
         let {lat, lon} = response[0]
         return {lat,lon}
       }
       const getWeatherData = async () => {
         let {lat, lon} = await getCoords(city)
-        let res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=90e13aa3cc978d06e4192761c1447ebf&units=metric`)
+        let res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${import.meta.env.VITE_API_KEY}&units=metric`)
         let response = await res.json()
         return response
       }  
